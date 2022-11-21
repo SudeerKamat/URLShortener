@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : SUDEER K
+  @group             : 
+  @last modified on  : 11-21-2022
+  @last modified by  : SUDEER K
+  Modifications Log
+  Ver   Date         Author     Modification
+  1.0   11-21-2022   SUDEER K   Initial Version
+-->
+<template>
+    <lightning-card title="URL Shortener" icon-name="utility:link">
+    <div class="slds-var-p-horizontal_medium ">
+       <lightning-input type="text" value={URL}  onchange={updateURL} title="URL" label="URL"></lightning-input>
+       <div class="slds-var-p-vertical_medium" style="float:right;">
+       <lightning-button onclick={getUrls} title="Shorten URL" label="Shorten URL" variant="netural"></lightning-button>
+       <lightning-button onclick={clear} title="Clear" label="Clear" variant="netural"></lightning-button>
+    </div>
+    <br/><br/>
+    </div>
+    <template if:true={details}>
+        <div class="slds-var-p-horizontal_medium" style="margin-top: 25px;">
+            <p>Short Link 1  : <a href={short_link} title={short_link} target="_blank">{short_link}</a></p>
+            <p>Short Link 2  : <a href={short_link2} title={short_link2} target="_blank">{short_link2}</a></p>
+            <p>Short Link 3  : <a href={short_link3} title={short_link3} target="_blank">{short_link3}</a></p>
+        </div>
+    </template>
+    </lightning-card>
+</template>
